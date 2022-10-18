@@ -54,7 +54,7 @@ function App() {
   //================ RETURN====================
   return (
     <div className="App">
-      <h1 className="text-center m-5">Yapılacaklar Listesi</h1>
+      <h1 className="text-center m-5">Yapılacaklar Listesi 2</h1>
 
       <div className="container">
         <form onSubmit={handleEkle}>
