@@ -34,8 +34,8 @@ function Yap(props) {
     geciciDizi.map((item) =>
       item.id === yapObj.id ? (item.isEdit = !yapObj.isEdit) : null
     );
-    if (yapObj.isEdit=== true){
-      setEditText(yapObj.text)
+    if (yapObj.isEdit === true) {
+      setEditText(yapObj.text);
     }
     setTumYap(geciciDizi);
   };
@@ -53,20 +53,24 @@ function Yap(props) {
       >
         <div className="d-flex justify-content-between">
           {yapObj.isEdit ? (
-            <form className="input-group mr-3" onSubmit={() => {
-              let geciciObj={...yapObj, isEdit:false, text: editText};
+            <form
+              className="input-group"
+              onSubmit={() => {
+                let geciciObj = { ...yapObj, isEdit: false, text: editText };
 
-              let geciciDizi=[];
+                let geciciDizi = [];
 
-              tumYap.map((item) => {if (item.id === yapObj.id) {
-                geciciDizi = [...geciciDizi, geciciObj];
-              }else{
-                geciciDizi = [...geciciDizi,item]
-              }})
-              setTumYap(geciciDizi)
-
-
-            }}>
+                tumYap.map((item) => {
+                  if (item.id === yapObj.id) {
+                    geciciDizi = [...geciciDizi, geciciObj];
+                  } else {
+                    geciciDizi = [...geciciDizi, item];
+                  }
+                  return null;
+                });
+                setTumYap(geciciDizi);
+              }}
+            >
               <input
                 id="formControl"
                 type="text"
@@ -93,7 +97,9 @@ function Yap(props) {
             {/* ==================== Button Done ================= */}
             <button
               type="button"
-              className={`${yapObj.isEdit ? "invisible": "visible"} "btn btn-primary" `}
+              className={`${
+                yapObj.isEdit ? "invisible" : "visible"
+              } btn btn-primary `}
               onClick={handleDone}
             >
               {yapObj.isDone ? (
@@ -107,7 +113,7 @@ function Yap(props) {
             {/* ================= Button Edit ================ */}
             <button
               type="button"
-              className="btn btn-primary"
+              className= {` ${yapObj.isDone ? "invisible": "visible"} btn btn-primary`}
               onClick={handleEdit}
             >
               {yapObj.isEdit ? (
@@ -117,11 +123,12 @@ function Yap(props) {
               )}
             </button>
 
-
             {/* ================= Button Delete===============*/}
             <button
               type="button"
-              className={`${yapObj.isEdit ? "invisible": "visible"} "btn btn-primary" `}
+              className={`${
+                yapObj.isEdit ? "invisible" : "visible"
+              } btn btn-primary`}
               onClick={handleDelete}
             >
               <span className="material-symbols-outlined">delete</span>
