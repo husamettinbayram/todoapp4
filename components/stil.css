@@ -1,0 +1,36 @@
+h1 {
+  color: olive;
+  font-weight: 800;
+  /* font-family: 'Montserrat', sans-serif; */
+  text-decoration: overline underline;
+}
+
+#inputAlani:focus {
+  outline: none !important;
+  border: none !important;
+  background-color: aqua;
+  opacity: 50%;
+}
+
+#inputGroup {
+  margin-bottom: 10px;
+}
+
+.gorevDone {
+  text-decoration: line-through;
+}
+
+.gorev,
+.gorevDone {
+  font-size: larger;
+}
+
+/* #alertBox{min-height: 130px;} */
+
+#formControl {
+  margin: 0 5px;
+}
+
+.btn-group {
+  max-height: 50px;
+}
